@@ -18,6 +18,10 @@
                 padding: 0;
             }
 
+            @include sm{
+                justify-content: flex-start;
+            }
+
             .title{
                 font-size: 64px;
                 @include lg {
@@ -32,7 +36,7 @@
                 @include sm{
                     display: none;
                 }
-                
+
                 h1{
                     font-size: 36px;
                     @include lg {
