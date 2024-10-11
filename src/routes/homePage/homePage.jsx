@@ -1,7 +1,11 @@
+import ScrollingList from "../../components/scrollingList/ScrollingList";
 import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
 
+import { listData } from "../../lib/dummydata";
+
 function HomePage() {
+  console.log("listData:", listData);
   return (
     <div className="homePage">
       <div className="textContainer">
@@ -31,7 +35,7 @@ function HomePage() {
         </div>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="" />
+        <ScrollingList properties={listData} direction="bottom-to-top" />
       </div>
     </div>
   );

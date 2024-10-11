@@ -1,0 +1,27 @@
+.scrollingList {
+    overflow: hidden;
+    height: 100%; // Set this to the desired height for the visible area
+    width: 100%;
+    position: relative;
+  }
+  
+  .scrollingList ul {
+    display: flex;
+    flex-direction: column;
+    animation: scroll 10s linear infinite; // Set duration for a continuous effect
+    position: absolute;
+    gap: 10px;
+  }
+  
+  .scrollingList li {
+    list-style: none;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20%); // Move by 100% of the height of the list
+    }
+  }
