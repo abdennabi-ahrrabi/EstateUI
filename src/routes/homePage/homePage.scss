@@ -1,72 +1,187 @@
 @import "../../responsive.scss";
 
 .homePage {
-  display: flex;
-  height: 100%;
+display: flex;
+height: 100%;
 
-  .textContainer {
-    flex: 3;
+.textContainer {
+flex: 3;
 
-    .wrapper {
-      padding-right: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 50px;
-      height: 100%;
+.wrapper {
+padding-right: 100px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 100%;
 
-      @include lg{
-        padding-right: 50px;
-      }
+@include lg {
+padding-right: 50px;
+}
 
-      @include md{
-        padding: 0;
-      }
+@include md {
+padding: 0;
+}
 
-      @include sm{
-        justify-content: flex-start;
-      }
+@include sm {
+justify-content: flex-start;
+}
 
-      .title {
-        font-size: 64px;
+.title {
+font-size: 44px;
 
-        @include lg {
-          font-size: 48px;
-        }
-      }
+@include lg {
+font-size: 32px;
+}
+}
 
-      .boxes {
-        display: flex;
-        justify-content: space-between;
+p {
+font-size: 15px;
+color: #6c757d;
+line-height: 1.6;
+}
 
-        @include sm {
-          display: none;
-        }
+// Offers Section
 
-        h1 {
-          font-size: 36px;
+.offers-section {
+margin-top: 3rem;
+text-align: center;
 
-          @include lg {
-            font-size: 32px;
-          }
-        }
+h2 {
+font-size: 2rem;
+margin-bottom: 1.5rem;
 
-        h2 {
-          font-size: 20px;
-          font-weight: 300;
-        }
-      }
-    }
+@include sm {
+font-size: 1.5rem; /* Adjusted for small screens */
+}
+}
+
+.offers-cards {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+
+.offer-card {
+background-color: #f9f9f9;
+padding: 1rem;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+flex: 1;
+text-align: left;
+transition: transform 0.3s, box-shadow 0.3s;
+width: 25%; /* Default smaller width for large screens */
+
+&:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+img {
+width: 100%;
+border-radius: 10px;
+margin-bottom: 0.5rem;
+}
+
+h3 {
+font-size: 1.25rem;
+margin-bottom: 0.5rem;
+
+@include sm {
+font-size: 1.1rem; 
+}
+}
+
+p {
+font-size: 0.9rem;
+margin-bottom: 0.5rem;
+color: #666;
+
+@include sm {
+font-size: 0.85rem; 
+}
+}
+
+.offer-button {
+background-color: #1976d2;
+color: white;
+padding: 0.5rem 1rem;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+
+&:hover {
+background-color: #005bb5;
+}
+}
+}
+
+.highlighted-offer {
+background-color: #fff7e0;
+border: 2px solid #ffcd00; /* Highlighted offer border */
+}
+
+// Responsive adjustments for medium and small screens
+@include md {
+.offer-card {
+width: 30%; /* Full width on medium screens */
+margin-bottom: 20px;
+}
+}
+
+@include sm {
+  flex-direction: row; /* Flexbox row direction */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  width: 100%; /* Ensure the section is full width */
+  gap: 10px;
+
+  .offer-card {
+    width: 50%; /* Show one card at a time */
+    flex: 0 0 50%; /* Each card takes full width */
+    margin-bottom: 0;
   }
+}
+}
+}
 
-  .imgContainer {
-    flex: 2;
-    position: relative;
-    display: flex;
-    align-items: center;
+// CTA button styling
+.cta-button {
+width: 50%;
+padding: 0.75rem 2rem;
+background-color: #271813;
+color: white;
+font-size: 1.25rem;
+font-weight: 600;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-top: 1.5rem;
 
-    @include md {
-      display: none;
-    }
-  }
+&:hover {
+background-color: #543328;
+}
+
+@include lg {
+font-size: 1.1rem;
+padding: 0.65rem 1.8rem;
+}
+
+@include md {
+font-size: 1rem;
+padding: 0.6rem 1.6rem;
+}
+}
+}
+}
+
+.imgContainer {
+flex: 2;
+position: relative;
+display: flex;
+align-items: center;
+
+@include md {
+display: none;
+}
+}
 }
